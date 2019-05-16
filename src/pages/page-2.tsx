@@ -1,15 +1,15 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react"
+import { Link } from "gatsby"
 
-import SEO from '../components/SEO'
-import { ThemeConsumer, theme } from '../theme'
+import SEO from "../components/SEO/SEO"
+import { ThemeConsumer, theme } from "../theme"
 
 const darkTheme = {
   ...theme,
   colors: {
     ...theme.colors,
-    background: '#141618',
-    foreground: '#FFFFFF',
+    background: "#141618",
+    foreground: "#FFFFFF",
   },
 }
 

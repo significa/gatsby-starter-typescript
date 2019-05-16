@@ -1,10 +1,10 @@
-import React from 'react'
-import * as sc from 'styled-components'
+import React from "react"
+import * as sc from "styled-components"
 
-import { ITheme } from './types'
-import reset from './reset'
-import style from './style'
-import theme from './theme'
+import { ITheme } from "./types"
+import reset from "./reset"
+import style from "./style"
+import theme from "./theme"
 
 /** Custom Styled components with theme interface (to export) */
 const {

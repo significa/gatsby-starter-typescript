@@ -1,6 +1,6 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react"
+import Helmet from "react-helmet"
+import { StaticQuery, graphql } from "gatsby"
 
 type MetaProps =
   | { name: string; content: any; property?: undefined }
@@ -79,7 +79,7 @@ const SEO = ({ description, lang, meta, keywords, title }: ISEOProps) => {
 }
 
 SEO.defaultProps = {
-  lang: 'en',
+  lang: "en",
   meta: [],
   keywords: [],
 }
