@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://significa.pt">
-    <img alt="Significa" src="https://avatars2.githubusercontent.com/u/21216358?s=200&v=4" width="60" />
+    <img alt="{{= appName }}" src="https://avatars2.githubusercontent.com/u/21216358?s=200&v=4" width="60" />
   </a>
 </p>
 <h1 align="center">
-@significa/gatsby-typescript-boilerplate
+{{= appName }}
 </h1>
 
 ## Features

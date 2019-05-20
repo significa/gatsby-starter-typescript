@@ -1,9 +1,9 @@
 {
-  "name": "significa-website",
+  "name": "{{= appName }}-website",
   "private": true,
-  "description": "Significa's website",
+  "description": "{{= appName }}'s website",
   "version": "0.1.0",
-  "author": "Significa <hello@significa.pt>",
+  "author": "",
   "keywords": [
     "gatsby"
   ],

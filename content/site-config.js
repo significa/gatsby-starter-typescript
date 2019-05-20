@@ -1,10 +1,10 @@
 const path = require("path")
 
 module.exports = {
-  title: `Significa`,
-  shortName: `Significa`,
-  description: `Significa is a digital agency focused on user centric interfaces`,
-  author: `@significadesign`,
+  title: `{{= appName }}`,
+  shortName: `{{= appName }}`,
+  description: `{{= appName }} description`,
+  author: `@{{= appName }}`,
   keywords: [
     "design",
     "development",
@@ -14,7 +14,7 @@ module.exports = {
     "digital",
     "product",
   ],
-  siteUrl: "https://significa.co",
+  siteUrl: "https://{{= appName }}.co",
   themeColor: "#000",
   backgroundColor: "#fff",
   pathPrefix: null,
