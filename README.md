@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Significa website
+@significa/gatsby-typescript-boilerplate
 </h1>
 
 ## Features

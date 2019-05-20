@@ -1,18 +1,17 @@
 import React from "react"
-import * as sc from "styled-components"
 import "wipe.css"
 
-import { ITheme } from "./types"
+import styled, {
+  css,
+  createGlobalStyle,
+  keyframes,
+  StyledThemeProvider,
+} from "./styled"
+import { media } from "./breakpoints"
 import style from "./style"
 import theme from "./theme"
-import { media } from "./breakpoints"
 
-/** Custom Styled components with theme interface (to export) */
-const {
-  default: styled,
-  createGlobalStyle,
-  ThemeProvider: StyledThemeProvider,
-} = sc as sc.ThemedStyledComponentsModule<ITheme>
+import { ITheme } from "./types"
 
 /** Theme Context */
 /* tslint:disable:no-empty */
@@ -50,6 +49,6 @@ class ThemeProvider extends React.Component<
   }
 }
 
-export { theme, ThemeProvider, ThemeConsumer, media }
+export { theme, ThemeProvider, ThemeConsumer, keyframes, css, media }
 
 export default styled
