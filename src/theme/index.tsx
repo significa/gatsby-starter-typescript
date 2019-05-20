@@ -1,8 +1,8 @@
 import React from "react"
 import * as sc from "styled-components"
+import "wipe.css"
 
 import { ITheme } from "./types"
-import reset from "./reset"
 import style from "./style"
 import theme from "./theme"
 
@@ -25,7 +25,6 @@ const {
 
 /** Global styles */
 const GlobalStyle = createGlobalStyle`
-  ${reset}
   ${style}
 `
 
