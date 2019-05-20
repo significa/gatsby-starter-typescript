@@ -4,9 +4,15 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import React from 'react'
-import Layout from './src/layout'
+import React from "react"
+
+import Layout from "./src/layout"
+import { AppProvider } from "./src/store"
 
 export const wrapPageElement = ({ element, props }) => {
-  return <Layout {...props}>{element}</Layout>
+  return (
+    <AppProvider>
+      <Layout {...props}>{element}</Layout>
+    </AppProvider>
+  )
 }

@@ -1,6 +1,4 @@
-import { css } from './'
-
-const TRANSITION_TIME = '0.2s'
+import { css } from "styled-components"
 
 export default css`
   body {
@@ -8,8 +6,5 @@ export default css`
 
     color: ${({ theme }) => theme.colors.foreground};
     background-color: ${({ theme }) => theme.colors.background};
-
-    transition: background-color ${TRANSITION_TIME} ease,
-      color ${TRANSITION_TIME} ease;
   }
 `

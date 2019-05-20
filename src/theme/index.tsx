@@ -55,8 +55,8 @@ export {
   theme,
   ThemeProvider,
   ThemeConsumer,
-  css,
   createGlobalStyle,
+  css,
   keyframes,
 }
 
