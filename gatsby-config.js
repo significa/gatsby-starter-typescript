@@ -12,6 +12,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-webpack-size`,
+    `gatsby-plugin-netlify-cache`,
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
