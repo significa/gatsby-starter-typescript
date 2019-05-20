@@ -1,6 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 type MetaProps =
   | { name: string; content: any; property?: undefined }
@@ -8,92 +8,151 @@ type MetaProps =
 
 interface ISEOProps {
   description?: string
-  lang: string
-  meta: MetaProps[]
-  keywords: string[]
-  title: string
+  lang?: string
+  meta?: MetaProps[]
+  keywords?: string[]
+  title?: string
+  image?: string
+  titleTemplate?: string
 }
 
-const SEO = ({ description, lang, meta, keywords, title }: ISEOProps) => {
+interface INodeImage {
+  node: {
+    resize: { originalName: string }
+    original: { src: string }
+  }
+}
+
+const SEO: React.FC<ISEOProps> = ({
+  description,
+  lang = "en",
+  meta = [],
+  keywords = [],
+  title,
+  image,
+  titleTemplate,
+}) => {
+  const { site, allImageSharp } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+            keywords
+            siteUrl
+          }
+        }
+        allImageSharp(
+          filter: { original: { src: { regex: "/twittercard|opengraph/" } } }
+        ) {
+          edges {
+            node {
+              resize {
+                originalName
+              }
+              original {
+                src
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+
+  const {
+    twittercard: twittercardImage,
+    opengraph: opengraphImage,
+  } = allImageSharp.edges.reduce((prev: {}, { node }: INodeImage) => {
+    const name = node.resize.originalName.replace(".png", "")
+    const value = node.original.src
+
+    return { ...prev, [name]: value }
+  }, {})
+
+  const { siteUrl, author } = site.siteMetadata
+  const metaDescription = description || site.siteMetadata.description
+  const currentTitle = title || site.siteMetadata.title
+  const defaultTitleTemplate = title
+    ? `${site.siteMetadata.title} %s`
+    : site.siteMetadata.title
+
   return (
-    <StaticQuery
-      query={detailsQuery}
-      render={data => {
-        const metaDescription =
-          description || data.site.siteMetadata.description
-        return (
-          <Helmet
-            htmlAttributes={{
-              lang,
-            }}
-            title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-            meta={[
-              {
-                name: `description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:title`,
-                content: title,
-              },
-              {
-                property: `og:description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:type`,
-                content: `website`,
-              },
-              {
-                name: `twitter:card`,
-                content: `summary`,
-              },
-              {
-                name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
-              },
-              {
-                name: `twitter:title`,
-                content: title,
-              },
-              {
-                name: `twitter:description`,
-                content: metaDescription,
-              },
-            ]
-              .concat(
-                keywords.length > 0
-                  ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
-                  : []
-              )
-              .concat(meta)}
-          />
-        )
+    <Helmet
+      htmlAttributes={{
+        lang,
       }}
+      title={currentTitle}
+      titleTemplate={titleTemplate || defaultTitleTemplate}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:url`,
+          content: siteUrl,
+        },
+        {
+          property: `og:site_name`,
+          content: currentTitle,
+        },
+        {
+          property: `og:title`,
+          content: currentTitle,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: `${siteUrl}${image || opengraphImage}`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:image`,
+          content: `${siteUrl}${image || twittercardImage}`,
+        },
+        {
+          name: `twitter:site`,
+          content: author,
+        },
+        {
+          name: `twitter:creator`,
+          content: author,
+        },
+        {
+          name: `twitter:title`,
+          content: currentTitle,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        // { rel: 'dns-prefetch', href: 'https://client.relay.crisp.chat' },
+      ]
+
+        .concat(
+          keywords.length > 0
+            ? {
+                name: `keywords`,
+                content: keywords.join(`, `),
+              }
+            : []
+        )
+        .concat(meta)}
     />
   )
 }
 
-SEO.defaultProps = {
-  lang: "en",
-  meta: [],
-  keywords: [],
-}
-
 export default SEO
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`
