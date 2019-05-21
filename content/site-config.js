@@ -3,8 +3,8 @@ const path = require("path")
 module.exports = {
   title: `{{= appName }}`,
   shortName: `{{= appName }}`,
-  description: `{{= appName }} description`,
-  author: `@{{= appName }}`,
+  description: `{{= appDescription }}`,
+  author: `@{{= appAuthor }}`,
   keywords: [
     "design",
     "development",
@@ -14,7 +14,7 @@ module.exports = {
     "digital",
     "product",
   ],
-  siteUrl: "https://{{= appName }}.co",
+  siteUrl: "{{= appUrl }}",
   themeColor: "#000",
   backgroundColor: "#fff",
   pathPrefix: null,

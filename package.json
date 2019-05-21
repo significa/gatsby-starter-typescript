@@ -1,9 +1,8 @@
 {
-  "name": "{{= appName }}-website",
   "private": true,
-  "description": "{{= appName }}'s website",
+  "description": "{{= appDescription }}'s website",
   "version": "0.1.0",
-  "author": "",
+  "author": "{{= appAuthor }}",
   "keywords": [
     "gatsby"
   ],
@@ -59,12 +58,5 @@
     "tslint-react-a11y": "^1.0.0",
     "typescript": "^3.2.2",
     "webpack": "^4.32.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Significa/significa.co"
-  },
-  "bugs": {
-    "url": "https://github.com/Significa/significa.co/issues"
   }
 }
