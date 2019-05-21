@@ -2,7 +2,7 @@ import React from "react"
 import { renderToString } from "react-dom/server"
 import { ServerStyleSheet } from "styled-components"
 
-import { AppProvider } from "./src/store"
+import { AppProvider } from "@store"
 
 // Connect store
 export const replaceRenderer = ({

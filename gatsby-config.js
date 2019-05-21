@@ -1,3 +1,4 @@
+const path = require("path")
 const siteConfig = require("./content/site-config")
 
 module.exports = {
@@ -13,6 +14,18 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-webpack-size`,
     `gatsby-plugin-netlify-cache`,
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@components": path.resolve(__dirname, "src/components"),
+          "@store": path.resolve(__dirname, "src/store"),
+          "@theme": path.resolve(__dirname, "src/theme"),
+          "@utils": path.resolve(__dirname, "src/utils"),
+        },
+        extensions: [],
+      },
+    },
     {
       resolve: "gatsby-plugin-favicon",
       options: {
