@@ -1,17 +1,17 @@
-import React from "react"
-import "wipe.css"
+import React from 'react'
+import 'wipe.css'
 
 import styled, {
   css,
   createGlobalStyle,
   keyframes,
   StyledThemeProvider,
-} from "./styled"
-import { media } from "./breakpoints"
-import style from "./style"
-import theme from "./theme"
+} from './styled'
+import { media } from './breakpoints'
+import style from './style'
+import theme from './theme'
 
-import { ITheme } from "./types"
+import { ITheme } from './types'
 
 /** Theme Context */
 /* tslint:disable:no-empty */

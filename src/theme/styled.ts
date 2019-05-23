@@ -1,5 +1,5 @@
-import * as sc from "styled-components"
-import { ITheme } from "./types"
+import * as sc from 'styled-components'
+import { ITheme } from './types'
 
 /** Custom Styled components with theme interface (to export) */
 const {
