@@ -9,18 +9,35 @@
 
 ## Features
 
-- [x] Typescript;
-- [x] TSLint;
+### Architecture
+
+- [x] Typescript supports;
+- [x] One config file for site-wide settings (`/content/site-config.js`);
+- [x] React Context for global UI state, with SSR;
+- [x] UI Folder with common components;
+- [x] No index files: `Header/Header.tsx` and `Header/Header.css.ts`
+- [x] Support alias and absolutes imports: `@` to access `./src`;
+
+### SEO
+
+- [x] SEO component: Social / meta tags;'
+- [x] Generate sitemap automatically;
+- [x] Generates all favicons for Web, Android, iOS,
+
+### Style
+
 - [x] [`styled-components`](https://www.styled-components.com/) v4
-- [x] One config file for site-wide settings;
-- [x] Sitemap support;
-- [ ] Prettier / Lint stage
-- [ ] [`size-plugin`](https://github.com/GoogleChromeLabs/size-plugin) to keep an eye on your bundle sizes
-- [ ] Support lambda functions
-- [ ] Generated media queries for easy use
-- [ ] Social / meta tags component
-- [ ] React Context for global UI state, with SSR
-- [ ] 🐙 Schema JSONLD
+- [x] Reset.css;
+- [x] Generated media queries for easy use;
+
+### Quality code and others
+
+- [x] Fomat Prettier by Lint stage (only update what is in HEAD);
+- [x] [`size-plugin`](https://github.com/GoogleChromeLabs/size-plugin) to keep an eye on your bundle sizes
+- [x] commitlint: Lint commit messages;
+- [x] Eslint;
+- [x] Run develop mode from Local LAN (0.0.0.0:8000);
+- [x] Test support
 
 ## Run development mode
 

@@ -1,4 +1,3 @@
 {
-  "src/**/*.{ts,tsx}": ["tslint -c tslint.json 'src/**/*.{ts,tsx}'", "git add"],
-  "src/**/*.{js,md,json}": ["prettier --write", "git add"]
+  "*": ["npm run format && npm run lint", "git add"]
 }

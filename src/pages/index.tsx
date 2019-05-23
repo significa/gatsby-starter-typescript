@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { Context } from "@store"
-import SEO from "@components/SEO/SEO"
+import { Context } from "@/store"
+import SEO from "@/components/SEO/SEO"
 
 const IndexPage = () => {
   const { count, increment, decrement } = React.useContext(Context)

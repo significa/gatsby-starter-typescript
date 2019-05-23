@@ -1,8 +1,8 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
-import { ThemeProvider } from "@theme"
-import Header from "@components/Header/Header"
+import { ThemeProvider } from "@/theme"
+import Header from "@/components/Header/Header"
 
 import { Content } from "./layout.css"
 

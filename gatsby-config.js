@@ -13,15 +13,11 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-webpack-size`,
-    `gatsby-plugin-netlify-cache`,
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          "@components": path.resolve(__dirname, "src/components"),
-          "@store": path.resolve(__dirname, "src/store"),
-          "@theme": path.resolve(__dirname, "src/theme"),
-          "@utils": path.resolve(__dirname, "src/utils"),
+          "@": path.resolve(__dirname, "src/"),
         },
         extensions: [],
       },
