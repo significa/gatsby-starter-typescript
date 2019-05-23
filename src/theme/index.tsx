@@ -1,12 +1,13 @@
 import React from 'react'
+import 'wipe.css'
+
 import styled, {
   css,
   createGlobalStyle,
   keyframes,
   StyledThemeProvider,
 } from './styled'
-
-import reset from './reset'
+import { media } from './breakpoints'
 import style from './style'
 import theme from './theme'
 
@@ -22,7 +23,6 @@ const {
 
 /** Global styles */
 const GlobalStyle = createGlobalStyle`
-  ${reset}
   ${style}
 `
 
@@ -49,13 +49,6 @@ class ThemeProvider extends React.Component<
   }
 }
 
-export {
-  theme,
-  ThemeProvider,
-  ThemeConsumer,
-  css,
-  createGlobalStyle,
-  keyframes,
-}
+export { theme, ThemeProvider, ThemeConsumer, keyframes, css, media }
 
 export default styled

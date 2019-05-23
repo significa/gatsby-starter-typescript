@@ -1,10 +1,10 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-import { Content } from './styled'
+import { ThemeProvider } from '@/theme'
+import Header from '@/components/Header/Header'
 
-import { ThemeProvider } from '../theme'
-import Header from '../components/Header'
+import { Content } from './layout.css'
 
 interface ILayoutProps {
   children: React.ReactNode

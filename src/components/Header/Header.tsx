@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 
-import { Wrapper, Content, Link } from './styled'
+import { Wrapper, Content, Link } from "./Header.css"
 
 const Header = ({ siteTitle }: { siteTitle: string }) => (
   <Wrapper>
@@ -11,7 +11,7 @@ const Header = ({ siteTitle }: { siteTitle: string }) => (
 )
 
 Header.defaultProps = {
-  siteTitle: '',
+  siteTitle: "",
 }
 
 export default Header
