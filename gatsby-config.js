@@ -1,5 +1,5 @@
-const path = require("path")
-const siteConfig = require("./content/site-config")
+const path = require('path')
+const siteConfig = require('./content/site-config')
 
 module.exports = {
   siteMetadata: {
@@ -17,21 +17,9 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          "@": path.resolve(__dirname, "src/"),
+          '@': path.resolve(__dirname, 'src/'),
         },
         extensions: [],
-      },
-    },
-    {
-      resolve: "gatsby-plugin-favicon",
-      options: {
-        logo: siteConfig.logo,
-        appName: siteConfig.shortName,
-        appDescription: siteConfig.description,
-        dir: "auto",
-        lang: "en-US",
-        background: siteConfig.themeColor,
-        theme_color: siteConfig.themeColor,
       },
     },
     {
